@@ -6,54 +6,58 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
-<h:head></h:head>
-<body>
+<h:head>
 	<h:form>
-		<p:tabMenu activeIndex="#{param.i}">
+		<p:tabMenu activeIndex="#{param.i}" style="margin-bottom:15px;margin-left:30em; margin-right: 30em">
 			<p:menuitem value="Home" icon="pi pi-fw pi-home">
 				<f:param name="i" value="0" />
 			</p:menuitem>
-			<p:menuitem value="Setup" icon="pi pi-fw pi-calendar">
+			<p:menuitem value="Setup" icon="pi pi-fw pi-desktop">
 				<f:param name="i" value="1" />
 			</p:menuitem>
-			<p:menuitem value="Profile" icon="pi pi-fw pi-pencil">
+			<p:menuitem value="Profile" icon="pi pi-fw pi-user">
 				<f:param name="i" value="2" />
 			</p:menuitem>
 		</p:tabMenu>
 	</h:form>
+</h:head>
+<body style="background-color:hsl(0deg 0% 91%)">
+	
 
 	<p:card
-		style="width: 25em; margin-bottom:2em; margin: 0 auto; float: none; margin-bottom:10px; ">
+		style="width: 25em; margin: 0 auto; float: none; margin-bottom: 10px;">
 		<f:facet name="header">
 		</f:facet>
 		<f:facet name="title">
         New Setup
     </f:facet>
 		<div class="card">
-			<div class="p-field p-grid"
-				style="margin-bottom: 2em; margin: 0 auto; float: none; margin-bottom: 10px;">
-				<label for="name" class="p-col-fixed" style="width: 100px">Name</label>
+			<div class="field grid"
+				style="display: flex; flex-wrap: wrap; align-content: center; margin-bottom: 5px;">
+				<label for="name" class="col-fixed" style="width: 100px">Name</label>
 				<div class="p-col">
 					<p:inputText id="name" type="text" />
 				</div>
 			</div>
 			<div class="p-field p-grid"
-				style="margin-bottom: 2em; margin: 0 auto; float: none; margin-bottom: 10px;">
+				style="display: flex; flex-wrap: wrap; align-content: center; margin-bottom: 5px;">
 				<label for="description" class="p-col-fixed" style="width: 100px">Description</label>
 				<div class="p-col">
-					<p:inputText id="description" type="text" />
+					<p:inputTextarea cols="22" id="description" type="text" />
 				</div>
 			</div>
 			<div class="p-field p-grid"
-				style="margin-bottom: 2em; margin: 0 auto; float: none; margin-bottom: 10px;">
+				style="display: flex; flex-wrap: wrap; align-content: center; margin-bottom: 5px;">
 				<label for="price" class="p-col-fixed" style="width: 100px">Price</label>
 				<div class="p-col">
 					<p:inputText id="price" type="text" />
 				</div>
 			</div>
+
 		</div>
+
 		<f:facet name="footer">
-			<p:commandButton icon="pi pi-check" value="Save" />
+			<p:commandButton icon="pi pi-save" value="Save" />
 			<p:commandButton icon="pi pi-times" value="Cancel"
 				styleClass="ui-button-secondary" style="margin-left: .5em" />
 		</f:facet>
