@@ -1,4 +1,5 @@
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
@@ -7,10 +8,32 @@
 
 <ui:composition template="/_template.xhtml">
 	<ui:define name="content">
+		<h:form>
+			<div class="card">
+				<p:dataTable var="usuario" value="#{usuarioBean.usuarios}">
+					<p:column headerText="Id">
+						<h:outputText value="#{usuario.id}" />
+					</p:column>
 
-			<p:card style="width: 25em; margin: 1em auto">
-			<p>Profiles</p>			
-			</p:card>
+					<p:column headerText="Nome">
+						<h:outputText value="#{usuario.nome}" />
+					</p:column>
+
+					<p:column headerText="Email">
+						<h:outputText value="#{usuario.email}" />
+					</p:column>
+
+					<p:column headerText="Data de nascmento">
+						<h:outputText value="#{usuario.dataNascimento}" />
+					</p:column>
+					<p:column headerText="Senha">
+						<h:outputText value="#{usuario.senha}" />
+					</p:column>
+				</p:dataTable>
+			</div>
+		</h:form>
+
+
 
 
 	</ui:define>

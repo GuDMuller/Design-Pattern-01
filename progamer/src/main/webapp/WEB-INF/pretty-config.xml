@@ -12,8 +12,14 @@
 		<pattern value="/setup/new" />
 		<view-id value="setup_new.xhtml" />
 	</url-mapping>
+	
 	<url-mapping id="profile">
 		<pattern value="/profile" />
 		<view-id value="profile.xhtml" />
 	</url-mapping>
+	<url-mapping id="form-usuario">
+		<pattern value="/usuario" />
+		<view-id value="usuario_new.xhtml" />
+	</url-mapping>
+	
 </pretty-config>

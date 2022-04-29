@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/_template.xhtml">
+
+	<ui:define name="content">
+
+		<!-- FORM -->
+		<h:form>
+
+			<p:messages id="messages" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+			<p:card style="width: 25em; margin: 1em auto;">
+				<f:facet name="title"> Novo Usuario </f:facet>
+				<div class="ui-fluid">
+					<div class="p-field">
+						<label for="nome">Nome</label>
+						<p:inputText value="#{usuarioBean.usuario.nome}" id="nome"
+							type="text" required="true"
+							requiredMessage="O campo nome é obrigatório" />
+					</div>
+					<div class="p-field">
+						<label for="email">E-mail</label>
+						<p:inputText value="#{usuarioBean.usuario.email}" id="email"
+							type="text" required="true"
+							requiredMessage="O campo e-mail é obrigatório">
+						</p:inputText>
+
+					</div>
+					<div class="p-field">
+						<label for="dataNascimento">Data de Nascimento</label>
+						<p:datePicker pattern="dd-MM-yy" id="dataNascimento" required="true"
+							value="#{usuarioBean.usuario.dataNascimento}"
+							model="#{datePickerMetadataView.model}" 
+							requiredMessage="O campo de data de nascimento é obrigatório"/>
+					</div>
+					<div class="p-field">
+						<label for="senha">Senha</label>
+						<p:password id="toggle" value="#{usuarioBean.usuario.senha}"
+							toggleMask="false" redisplay="true" type="text" required="true"
+							requiredMessage="O campo senha é obrigatório" />
+					</div>
+				</div>
+
+				<f:facet name="footer">
+					<p:commandButton action="#{usuarioBean.save()}" icon="pi pi-save"
+						value="Save" />
+					<p:commandButton icon="pi pi-times" value="Cancel"
+						styleClass="ui-button-secondary" style="margin-left: .5em" />
+				</f:facet>
+			</p:card>
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

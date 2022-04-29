@@ -30,8 +30,9 @@
 						<label for="description">Description</label>
 						<p:inputTextarea value="#{setupBean.setup.description}"
 							id="description" type="text" 
-							validatorMessage="A descrição  deve ter pelo menos 10 caracteres e no máxim 255"/>
+							validatorMessage="A descrição  deve ter pelo menos 10 caracteres e no máxim 255">
 							<f:validateLength minimum="10" maximum="255" />
+						</p:inputTextarea>
 							
 					</div>
 					<div class="p-field">
