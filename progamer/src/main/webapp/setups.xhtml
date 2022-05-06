@@ -8,8 +8,17 @@
 <ui:composition template="/_template.xhtml">
 	<ui:define name="content">
 		<h:form>
+			<p:messages id="messages" closable="true">
+				<p:autoUpdate />
+			</p:messages>
+
+
 			<div class="card">
 				<p:dataTable var="setup" value="#{setupBean.setups}">
+					<p:column headerText="image">
+						<img src="#{request.contextPath}#{setup.imagePath}"
+						style="width:120px" />
+					</p:column>
 					<p:column headerText="Id">
 						<h:outputText value="#{setup.id}" />
 					</p:column>

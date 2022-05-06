@@ -5,6 +5,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui">
 
+<!-- USAR DATA VIEW CHECKPOINT -->
 <ui:composition template="/_template.xhtml">
 
 	<ui:define name="content">
@@ -23,28 +24,35 @@
 						<label for="nome">Nome</label>
 						<p:inputText value="#{usuarioBean.usuario.nome}" id="nome"
 							type="text" required="true"
-							requiredMessage="O campo nome é obrigatório" />
+							requiredMessage="O campo nome é obrigatório">
+							<f:ajax event="blur" render="messages" />
+						</p:inputText>
 					</div>
 					<div class="p-field">
 						<label for="email">E-mail</label>
 						<p:inputText value="#{usuarioBean.usuario.email}" id="email"
 							type="text" required="true"
 							requiredMessage="O campo e-mail é obrigatório">
+							<f:ajax event="blur" render="messages" />
 						</p:inputText>
 
 					</div>
 					<div class="p-field">
 						<label for="dataNascimento">Data de Nascimento</label>
-						<p:datePicker pattern="dd-MM-yy" id="dataNascimento" required="true"
-							value="#{usuarioBean.usuario.dataNascimento}"
-							model="#{datePickerMetadataView.model}" 
-							requiredMessage="O campo de data de nascimento é obrigatório"/>
+						<p:datePicker pattern="dd-MM-yy" id="dataNascimento"
+							required="true" value="#{usuarioBean.usuario.dataNascimento}"
+							model="#{datePickerMetadataView.model}"
+							requiredMessage="O campo de data de nascimento é obrigatório" >
+						<f:ajax event="blur" render="messages" />
+						</p:datePicker>
 					</div>
 					<div class="p-field">
 						<label for="senha">Senha</label>
 						<p:password id="toggle" value="#{usuarioBean.usuario.senha}"
 							toggleMask="false" redisplay="true" type="text" required="true"
-							requiredMessage="O campo senha é obrigatório" />
+							requiredMessage="O campo senha é obrigatório" >
+						<f:ajax event="blur" render="messages" />
+						</p:password>
 					</div>
 				</div>
 
